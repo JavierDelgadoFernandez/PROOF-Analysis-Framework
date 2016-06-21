@@ -5,4 +5,4 @@ add_executable(PrimitiveTypesSerialization PrimitiveTypesSerialization.cxx)
 add_test(VariableContainer::PrimitiveTypesSerialization PrimitiveTypesSerialization)
 
 add_executable(TObjectSerialization TObjectSerialization.cxx)
-add_test(VariableContainer::TObjectSerialization TObjectSerialization)
+# add_test(VariableContainer::TObjectSerialization TObjectSerialization)
