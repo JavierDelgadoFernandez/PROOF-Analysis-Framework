@@ -1,3 +1,6 @@
+[![https://travis-ci.org/JavierDelgadoFernandez/PROOF-Analysis-Framework](https://api.travis-ci.org/JavierDelgadoFernandez/PROOF-Analysis-Framework.svg)](https://travis-ci.org/JavierDelgadoFernandez/PROOF-Analysis-Framework)
+
+
 The **[PROOF Analysis Framework]** **(PAF)** is a tool to easily and quickly implement distributed analysis over [ROOT] trees by hiding as much as possible the inherent complexities of parallel paradigms to the users and by providing a common framework for some of the different technologies available.
 
 The analysis of the complex [LHC] data usually follows a standard path that aims at minimizing not only the amount of data but also the number of observables used. After a number of steps of slimming and skimming the data, the remaining few terabytes of [ROOT] files typically hold a selection of the events and a flat structure for the variables needed that can be more easily inspected and traversed in the final stages of the analysis. [PROOF] arises at this point as an efficient mechanism to distribute the analysis load by taking advantage of all the cores in modern CPUs through [PROOF Lite], or by using PROOF Cluster or PROOF on Demand ([PoD]) tools to build dynamic PROOF cluster on computing facilities with spare CPUs.

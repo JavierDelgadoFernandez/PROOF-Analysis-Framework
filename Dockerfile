@@ -10,5 +10,5 @@ ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/:$PAFPATH/lib
 # Copies and compile the code
 COPY . $PAFPATH
 WORKDIR $PAFPATH/build/
-RUN bash -c "cmake .. && make install -j8 && rm -rf $PAFPATH/build/"
+RUN bash -c "cmake .. && make install && rm -rf $PAFPATH/build/"
 VOLUME $PAFPATH
