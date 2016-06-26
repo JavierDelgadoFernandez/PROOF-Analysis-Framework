@@ -1,30 +1,63 @@
 /**
-	@brief Internal PAF class to holds ROOT arrays types (Float_t, Double_t...) TLeafs.
-	@file PAFArrayPrimitiveType.h
-	@class PAFArrayPrimitiveType
-	@author I. Gonzalez Caballero, J. Delgado Fernandez
-	@version 1.0
-	@date 2014-06-17
+ * @brief Internal PAF class to holds ROOT arrays types (Float_t, Double_t...) TLeafs.
+ * @file PAFArrayPrimitiveType.h
+ * @author I. Gonzalez Caballero, J. Delgado Fernandez
+ * @version 1.0
+ * @date 2014-06-17
  */
 
 #pragma once
 
 #include "PAFAbstractType.h"
 
+/**
+ * @class PAFArrayPrimitiveType
+ * @brief Internal PAF class to holds ROOT arrays types (Float_t, Double_t...) TLeafs.
+ */
 template <class T>
 class PAFArrayPrimitiveType : public PAFAbstractType
 {
 	public:
+		/**
+		 * Default constructor.
+		 */
 		PAFArrayPrimitiveType();
+
+		/**
+		 * Create PAFElementType using a TLeaf object.
+		 *
+		 * @param leaf TLeaf object.
+		 */
 		PAFArrayPrimitiveType(TLeaf* leaf);
+
+		/**
+		 * Destructor.
+		 */
 		virtual ~PAFArrayPrimitiveType();
 
+		/**
+		 * Return the pointer to the values.
+		 */
 		virtual void* GetPointer();
+
+		/**
+		 * Return the pointer to the value in position pos.
+		 *
+		 * @param pos Position of the item.
+		 */
 		virtual void* GetPointer(Int_t pos);
 
+		/**
+		 * Calculate the number of items that the array contains.
+		 *
+		 * @return The number of items that the array contains.
+		 */
 		virtual Int_t GetNData();
 
 	protected:
+		/**
+		 * Pointer to the data.
+		 */
 		void* fPointer;
 
 	ClassDef(PAFArrayPrimitiveType<T>, 1);

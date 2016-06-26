@@ -1,10 +1,9 @@
 /**
-	@brief Class that provides you different TList searches.
-	@file PAFFindHelper.h
-	@class PAFFindHelper
-	@author I. Gonzalez Caballero, J. Delgado Fernandez
-	@version 1.0
-	@date 2015-02-01
+ * @brief Class that provides you different TList searches.
+ * @file PAFFindHelper.h
+ * @author I. Gonzalez Caballero, J. Delgado Fernandez
+ * @version 1.0
+ * @date 2015-02-01
  */
 
 #pragma once
@@ -16,18 +15,46 @@
 
 #include "PAF.h"
 
+/**
+ * @class PAFFindHelper
+ * @brief Class that provides you different TList searches.
+ */
 class PAFFindHelper 
 {
 	public:
+		/**
+		 * Look for an item in the given list.
+		 *
+		 * @param list List where the search will be performed.
+		 * @param name Name that should be used to look for the item.
+		 */
 		template <typename T>
 		static T Find(TList* list, TString& name);
 
+		/**
+		 * Look for an item in the given list.
+		 *
+		 * @param list List where the search will be performed.
+		 * @param name Name that should be used to look for the item.
+		 */
 		template <typename T>
 		static T Find(TList* list, const char* name);
 
+		/**
+		 * Look for an item of type PAFNamed in the given list.
+		 *
+		 * @param list List where the search will be performed.
+		 * @param name Name that should be used to look for the item.
+		 */
 		template <typename T>
 		static T FindPAFNamed(TList* list, TString& name);
 
+		/**
+		 * Look for an item of type PAFNamed in the given list.
+		 *
+		 * @param list List where the search will be performed.
+		 * @param name Name that should be used to look for the item.
+		 */
 		template <typename T>
 		static T FindPAFNamed(TList* list, const char* name);
 };
