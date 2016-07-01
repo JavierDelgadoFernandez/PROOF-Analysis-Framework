@@ -24,43 +24,62 @@ class PAFLogger
 		 * @param module Name of the module that is failing.
 		 * @param msg Message to be logged.
 		 */
-		static void Log(PAFLogLevel loglevel, const char* module, const char* msg);
+		void Log(PAFLogLevel loglevel, const char* module, const char* msg);
 
 		/**
 		 * Return the current logger behaviour.
 		 * 
 		 * @return The PAFILogger currently used.
 		 */
-		static PAFILogger* GetLogger() { return fLogger; }
+		PAFILogger* GetLogger() { return fLogger; }
 		
 		/**
 		 * Set the logger behaviour.
 		 * 
 		 * @param logger PAFILoger to be used.
 		 */
-		static void SetLogger(PAFILogger* logger) { fLogger = logger; }
+		void SetLogger(PAFILogger* logger) { fLogger = logger; }
 
 		
 		/**
 		 * Return the minimum log level to be registered.
 		 */
-		static PAFLogLevel GetLogLevel() { return fLogLevel; }
+		PAFLogLevel GetLogLevel() { return fLogLevel; }
 		
 		/**
 		 * Set the minimum log level to be registered.
 		 * 
 		 * @param loglevel Minimum log message level to register.
 		 */
-		static void SetLogLevel(PAFLogLevel loglevel) { fLogLevel = loglevel; }
+		void SetLogLevel(PAFLogLevel loglevel) { fLogLevel = loglevel; }
 
-	private:
+		/**
+		 * Return the instance of the logger.
+		 * 
+		 * @return PAFLogger instance.
+		 */
+		static PAFLogger* GetInstance();
+		
+	protected:
+		/**
+		 * Create a PAFLogger.
+		 */
+		PAFLogger(PAFILogger* logger, PAFLogLevel logLevel);
+		
+		
+	protected:
 		/**
 		 * Logger behaviour to be used.
 		 */
-		static PAFILogger* fLogger;
+		PAFILogger* fLogger;
 		
 		/**
 		 * Minimum log level to be registered.s
 		 */
-		static PAFLogLevel fLogLevel;
+		PAFLogLevel fLogLevel;
+		
+		/**
+		 * Singleton instance.
+		 */
+		static PAFLogger* fInstance;
 };

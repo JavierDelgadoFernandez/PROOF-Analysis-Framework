@@ -14,9 +14,25 @@
 #include "PAFConsoleLogger.h"
 #include "PAFStringUtil.h"
 
-//Default values
-PAFILogger* PAFLogger::fLogger = new PAFConsoleLogger();
-PAFLogLevel PAFLogger::fLogLevel = DEBUG;
+PAFLogger* PAFLogger::fInstance = NULL;
+
+PAFLogger::PAFLogger(PAFILogger* logger, PAFLogLevel logLevel)
+	: fLogger(logger), fLogLevel(logLevel)
+{
+
+}
+
+
+PAFLogger* PAFLogger::GetInstance()
+{
+	if (!fInstance)
+	{
+		PAFILogger* logger = new PAFConsoleLogger();
+		PAFLogLevel logLevel = DEBUG;
+		fInstance = new PAFLogger(logger, logLevel);
+	}
+	return fInstance;
+}
 
 void PAFLogger::Log(PAFLogLevel loglevel, const char* module, const char* msg)
 {

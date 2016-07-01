@@ -13,35 +13,33 @@
 
 #include "TSystem.h"
 
-PAFLogger* fLogger = new PAFLogger();
-
 void PAF_DEBUG(const char* module, const char* msg)
 {
-	fLogger->Log(DEBUG, module, msg);
+	PAFLogger::GetInstance()->Log(DEBUG, module, msg);
 }
 
 void PAF_INFO(const char* module, const char* msg)
 {
-	fLogger->Log(INFO, module, msg);
+	PAFLogger::GetInstance()->Log(INFO, module, msg);
 }
 
 void PAF_WARN(const char* module, const char* msg)
 {
-	fLogger->Log(WARN, module, msg);
+	PAFLogger::GetInstance()->Log(WARN, module, msg);
 }
 
 void PAF_ERROR(const char* module, const char* msg)
 {
-	fLogger->Log(ERROR, module, msg);
+	PAFLogger::GetInstance()->Log(ERROR, module, msg);
 }
 
 void PAF_FATAL(const char* module, const char* msg)
 {
-	fLogger->Log(FATAL, module, msg);
+	PAFLogger::GetInstance()->Log(FATAL, module, msg);
 	_exit(-1);
 }
 
 void PAF_LOG_LEVEL(PAFLogLevel loglevel)
 {
-	fLogger->SetLogLevel(loglevel);
+	PAFLogger::GetInstance()->SetLogLevel(loglevel);
 }
