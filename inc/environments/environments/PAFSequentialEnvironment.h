@@ -150,8 +150,6 @@ class PAFSequentialEnvironment : public PAFIExecutionEnvironment
 		 */
 		Long64_t GetEntriesTotal(TDSet* dataFiles);
 
-		TTree* GetTree(TDSet* dataFiles, Int_t i);
-
 		/**
 		 * Updates the real time histogram.
 		 *
