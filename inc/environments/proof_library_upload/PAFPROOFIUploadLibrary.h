@@ -20,28 +20,18 @@ class PAFPROOFIUploadLibrary
 {
 	public:
 		/**
-		 * Create a PAFPROOFIUploadLibrary.
-		 */
-		PAFPROOFIUploadLibrary();
-
-		/**
-		 * Delete a PAFPROOFIUploadLibrary.
-		 */
-		virtual ~PAFPROOFIUploadLibrary();
-
-		/**
 		 * Set the TProof session to use.
 		 *
 		 * @param session TProof session to be used.
 		 */
-		void SetSession(TProof* session);
+		virtual void SetSession(TProof* session) = 0;
 
 		/**
 		 * Return the TProof session.
 		 *
 		 * @return TProof session object.
 		 */
-		TProof* GetSession();
+		virtual TProof* GetSession() = 0;
 
 		/**
 		 * Upload a PAFLibrary to upload to the system.
@@ -50,10 +40,4 @@ class PAFPROOFIUploadLibrary
 		 * @return Success during the operation.
 		 */
 		virtual bool UploadLibrary(PAFLibrary* library) = 0;
-
-	protected:
-		/**
-		 * TProof session used.
-		 */
-		TProof* fSession;
 };

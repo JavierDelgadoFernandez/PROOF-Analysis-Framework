@@ -8,24 +8,3 @@
  */
 
 #include "PAFPROOFIUploadLibrary.h"
-
-PAFPROOFIUploadLibrary::PAFPROOFIUploadLibrary()
-	: fSession(0)
-{
-
-}
-
-PAFPROOFIUploadLibrary::~PAFPROOFIUploadLibrary()
-{
-
-}
-
-void PAFPROOFIUploadLibrary::SetSession(TProof* session)
-{
-	fSession = session;
-}
-
-TProof* PAFPROOFIUploadLibrary::GetSession()
-{
-	return fSession;
-}

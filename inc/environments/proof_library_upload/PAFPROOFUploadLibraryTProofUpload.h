@@ -8,13 +8,13 @@
 
 #pragma once
 
-#include "PAFPROOFIUploadLibrary.h"
+#include "PAFPROOFUploadLibraryAbstract.h"
 
 /**
  * @class PAFPROOFUploadLibraryTProofUpload
  * @brief PROOF Uplod library using TProof package mechanism.
  */
-class PAFPROOFUploadLibraryTProofUpload : public PAFPROOFIUploadLibrary 
+class PAFPROOFUploadLibraryTProofUpload : public PAFPROOFUploadLibraryAbstract 
 {
 	public:
 		/**

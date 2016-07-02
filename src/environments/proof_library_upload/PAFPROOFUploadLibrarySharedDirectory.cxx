@@ -12,7 +12,7 @@
 #include "TString.h"
 
 PAFPROOFUploadLibrarySharedDirectory::PAFPROOFUploadLibrarySharedDirectory()
-	: PAFPROOFIUploadLibrary()
+	: PAFPROOFUploadLibraryAbstract()
 {
 
 }

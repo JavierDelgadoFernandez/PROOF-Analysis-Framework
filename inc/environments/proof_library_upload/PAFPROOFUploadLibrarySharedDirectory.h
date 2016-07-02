@@ -8,13 +8,13 @@
 
 #pragma once
 
-#include "PAFPROOFIUploadLibrary.h"
+#include "PAFPROOFUploadLibraryAbstract.h"
 
 /**
  * @class PAFPROOFUploadLibrarySharedDirectory
  * @brief PROOF Uplod library using a shared file system.
  */
-class PAFPROOFUploadLibrarySharedDirectory : public PAFPROOFIUploadLibrary 
+class PAFPROOFUploadLibrarySharedDirectory : public PAFPROOFUploadLibraryAbstract 
 {
 	public:
 		/**

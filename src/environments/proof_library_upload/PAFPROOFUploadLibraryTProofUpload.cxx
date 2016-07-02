@@ -12,7 +12,7 @@
 #include "PAF.h"
 
 PAFPROOFUploadLibraryTProofUpload::PAFPROOFUploadLibraryTProofUpload()
-	: PAFPROOFIUploadLibrary()
+	: PAFPROOFUploadLibraryAbstract()
 {
 
 }
