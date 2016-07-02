@@ -6,10 +6,7 @@ before_install:
 - sudo apt update
 - sudo apt purge -y docker-engine
 - sudo apt install -y docker-engine
-- docker build -t paf .
 
 script:
-- docker run paf /bin/sh -c "cd /opt/PAF/test/ && mkdir build && cd build &&
-                             cmake -DCMAKE_BUILD_TYPE=Debug .. && make &&
-                             ctest"
+- "./run-tests.sh"
 
