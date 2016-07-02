@@ -37,19 +37,19 @@ class PAFBaseSelector : public TSelector
 		/**
 		 * Return the version of the object.
 		 */
-		virtual Int_t   Version() const;
+		virtual Int_t Version() const;
 
 		/**
 		 * Called when a new Tree should be used.
 		 *
 		 * @param tree New tree to be used.
 		 */
-		virtual void 	Init(TTree* tree);
+		virtual void Init(TTree* tree);
 
 		/**
 		 * Called before each worker starts to process.
 		 */
-		virtual void    SlaveBegin(TTree* tree);
+		virtual void SlaveBegin(TTree* tree);
 
 		/**
 		 * Called once per event.
@@ -61,7 +61,7 @@ class PAFBaseSelector : public TSelector
 		/**
 		 * Executed on the client side after the whole process and merge.
 		 */
-		virtual void    Terminate();
+		virtual void Terminate();
 
 		/**
 		 * Set the PAFISelector to be used.
@@ -109,27 +109,27 @@ class PAFBaseSelector : public TSelector
 		/**
 		 * Tree that is being currently proceesed.
 		 */
-		TTree*			fTree;
+		TTree* fTree;
 
 		/**
 		 * PAFISelector object used to process the data.
 		 */
-		PAFISelector*		fPAFISelector;
+		PAFISelector* fPAFISelector;
 
 		/**
 		 * Parameters from the project but also previous selectors.
 		 */
-		PAFVariableContainer*	fSelectorParams;
+		PAFVariableContainer* fSelectorParams;
 
 		/**
 		 * Variables contained in the data.
 		 */
-		PAFVariableContainer*	fVariables;//!
+		PAFVariableContainer* fVariables;//!
 
 		/**
 		 * File name output.
 		 */
-		TString			fOutputFile;
+		TString fOutputFile;
 
 	ClassDef(PAFBaseSelector, 1);
 };

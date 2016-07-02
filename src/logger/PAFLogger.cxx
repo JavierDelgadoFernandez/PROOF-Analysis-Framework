@@ -52,3 +52,23 @@ void PAFLogger::Log(PAFLogLevel loglevel, const char* module, const char* msg)
 		}
 	}
 }
+
+PAFILogger* PAFLogger::GetLogger()
+{
+	return fLogger;
+}
+
+void PAFLogger::SetLogger(PAFILogger* logger)
+{
+	fLogger = logger;
+}
+
+PAFLogLevel PAFLogger::GetLogLevel()
+{
+	return fLogLevel;
+}
+
+void PAFLogger::SetLogLevel(PAFLogLevel loglevel)
+{
+	fLogLevel = loglevel;
+}

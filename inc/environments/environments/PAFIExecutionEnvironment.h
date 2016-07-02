@@ -25,16 +25,6 @@ class PAFIExecutionEnvironment
 {
 	public:
 		/**
-		 * Create a PAFIExecutionEnvironment.
-		 */
-		PAFIExecutionEnvironment();
-
-		/**
-		 * Delete a PAFIExecutionEnvironment/
-		 */
-		virtual ~PAFIExecutionEnvironment();
-
-		/**
 		 * Initialise the environment.
 		 */
 		virtual void Initialise() = 0;

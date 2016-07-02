@@ -23,7 +23,7 @@ class PAFProgressUpdatedLogger : public PAFIProgressUpdated
 		 * @param total Total number of events (Events already processed plus those ones that are going to be processed in this analysis).
 		 * @param processed Already processed events.
 		 */
-		void ProgressUpdated(Long64_t total, Long64_t processed);
+		virtual void ProgressUpdated(Long64_t total, Long64_t processed);
 
 	ClassDef(PAFProgressUpdatedLogger, 1);
 };

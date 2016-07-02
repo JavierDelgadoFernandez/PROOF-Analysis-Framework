@@ -59,7 +59,7 @@ class PAFStopWatch
 		 *
 		 * @return A tuple containing name, value.
 		 */
-		TParameter<double>* GetTimeAt(int index) const;
+		TParameter<double>* GetTimeAt(int index);
 
 		/**
 		 * Return the whole list of times.
@@ -71,7 +71,7 @@ class PAFStopWatch
 		/**
 		 * Print the times using the logger in level INFO.
 		 */
-		void PrintTimes() const;
+		void PrintTimes();
 
 	protected:
 		/**
@@ -82,18 +82,18 @@ class PAFStopWatch
 		/**
 		 * Helper function to print a time.
 		 */
-		void PrintTime(TParameter<double>* time) const;
+		void PrintTime(TParameter<double>* time);
 
 	protected:
 		/**
 		 * Lit of times already taken.
 		 */
-		TList*		fTimes;
+		TList* fTimes;
 
 		/**
 		 * Stopwatch used to count the time.
 		 */
-		TStopwatch*	fWatch;
+		TStopwatch* fWatch;
 
 	ClassDef(PAFStopWatch, 1);
 };

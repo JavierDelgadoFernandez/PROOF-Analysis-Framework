@@ -29,5 +29,5 @@ class PAFConsoleLogger : public PAFILogger
 		/**
 		 * Empty implementation.
 		 */
-		virtual void Flush() {}
+		virtual void Flush();
 };

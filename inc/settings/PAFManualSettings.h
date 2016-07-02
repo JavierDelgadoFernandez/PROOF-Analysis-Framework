@@ -45,12 +45,12 @@ class PAFManualSettings : public PAFISettings
 		/**
 		 * PAF installation path in the file system.
 		 */
-		TString 		fPAFPath;
+		TString fPAFPath;
 
 		/**
 		 * A vector with the path in the file system to the directory.
 		 */
-		std::vector<TString*> 	fPackagesDirectories;
+		std::vector<TString*> fPackagesDirectories;
 
 	ClassDef(PAFManualSettings, 1);
 };

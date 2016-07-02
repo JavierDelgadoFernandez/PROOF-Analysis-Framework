@@ -52,7 +52,7 @@ class PAFEnvironmentVariableSettings : public PAFISettings
 		 *
 		 * Used to cache the result.
 		 */
-		TString*		fPAFPATH;
+		TString* fPAFPATH;
 
 		/**
 		 * A vector with the path in the file system to the directory.

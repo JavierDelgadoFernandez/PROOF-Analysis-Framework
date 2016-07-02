@@ -15,3 +15,8 @@ void PAFConsoleLogger::Log(PAFLogLevel level, const char * module, const char * 
 {
 	std::cout << PAFLogLevelStrings[level] << ": [" << module << "] " << msg << std::endl;
 }
+
+void PAFConsoleLogger::Flush()
+{
+
+}

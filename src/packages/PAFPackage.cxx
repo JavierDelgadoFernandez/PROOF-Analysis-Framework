@@ -32,7 +32,7 @@ PAFPackage::~PAFPackage()
 
 }
 
-void PAFPackage::PreparePackage() const
+void PAFPackage::PreparePackage()
 {
 	TString packages_dir = GetPackagesDir();
 	gSystem->MakeDirectory(packages_dir);
@@ -42,7 +42,7 @@ void PAFPackage::PreparePackage() const
 	PAF_DEBUG("PAFPackage", response_build_command);
 }
 
-TString PAFPackage::GetPreparePackageCommand() const
+TString PAFPackage::GetPreparePackageCommand()
 {
 	TString package_dir = GetPackageDir();
 	if(package_dir == "")
@@ -52,14 +52,14 @@ TString PAFPackage::GetPreparePackageCommand() const
 	return TString::Format("%s/bin/PreparePackage.sh -s -d %s -r %s %s", fPAFSettings->GetPAFPATH()->Data() , GetPackagesDir().Data(), package_dir.Data(), GetName());
 }
 
-void PAFPackage::CreateParFile() const
+void PAFPackage::CreateParFile()
 {
 	TString creteparfile_command = TString::Format("%s/bin/MakeParFile.sh -s -d %s %s", fPAFSettings->GetPAFPATH()->Data(), GetPackagesDir().Data(), GetName());
 	TString response_createparfile_command = gSystem->GetFromPipe(creteparfile_command);
 	PAF_DEBUG("PAFPackage", response_createparfile_command);
 }
 
-void PAFPackage::CompileAsLibrary() const
+void PAFPackage::CompileAsLibrary()
 {
 	TString compileaslibrary_command = TString::Format("%s/bin/CompileLibrary.sh -s -d %s %s", fPAFSettings->GetPAFPATH()->Data(),  GetPackagesDir().Data(), GetName());
 	TString response_compileaslibrary_command = gSystem->GetFromPipe(compileaslibrary_command);
@@ -74,7 +74,7 @@ void PAFPackage::CompileAsLibrary() const
 	}
 }
 
-const char* PAFPackage::GetName() const
+const char* PAFPackage::GetName()
 {
 	return fName.Data();
 }
@@ -94,17 +94,17 @@ void PAFPackage::SetSettings(PAFISettings* pafsettings)
 	fPAFSettings = pafsettings;
 }
 
-TString PAFPackage::GetLibraryFileName() const
+TString PAFPackage::GetLibraryFileName()
 {
 	return TString::Format("%s%s/lib%s.so", GetPackagesDir().Data(), GetName(), GetName());
 }
 
-TString PAFPackage::GetParFileName() const
+TString PAFPackage::GetParFileName()
 {
 	return TString::Format("%s%s.par", GetPackagesDir().Data(), GetName());
 }
 
-TString PAFPackage::GetPackageDir() const
+TString PAFPackage::GetPackageDir()
 {
 	std::vector<TString*>* package_directories = fPAFSettings->GetPackagesDirectories();
 	
@@ -119,7 +119,7 @@ TString PAFPackage::GetPackageDir() const
 	return TString("");
 }
 
-TString PAFPackage::GetPackagesDir() const
+TString PAFPackage::GetPackagesDir()
 {
 	return TString::Format("%s/packages/", gSystem->GetBuildDir());
 }

@@ -41,7 +41,7 @@ class PAFISettings : public TObject
 		 *
 		 * @return A vector with the path in the file system to the directory.
 		 */
-		virtual std::vector<TString*>* GetPackagesDirectories()= 0;
+		virtual std::vector<TString*>* GetPackagesDirectories() = 0;
 
 	ClassDef(PAFISettings, 1);
 };

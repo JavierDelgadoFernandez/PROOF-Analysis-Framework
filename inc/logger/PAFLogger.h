@@ -31,27 +31,27 @@ class PAFLogger
 		 * 
 		 * @return The PAFILogger currently used.
 		 */
-		PAFILogger* GetLogger() { return fLogger; }
+		PAFILogger* GetLogger();
 		
 		/**
 		 * Set the logger behaviour.
 		 * 
 		 * @param logger PAFILoger to be used.
 		 */
-		void SetLogger(PAFILogger* logger) { fLogger = logger; }
+		void SetLogger(PAFILogger* logger);
 
 		
 		/**
 		 * Return the minimum log level to be registered.
 		 */
-		PAFLogLevel GetLogLevel() { return fLogLevel; }
+		PAFLogLevel GetLogLevel();
 		
 		/**
 		 * Set the minimum log level to be registered.
 		 * 
 		 * @param loglevel Minimum log message level to register.
 		 */
-		void SetLogLevel(PAFLogLevel loglevel) { fLogLevel = loglevel; }
+		void SetLogLevel(PAFLogLevel loglevel);
 
 		/**
 		 * Return the instance of the logger.

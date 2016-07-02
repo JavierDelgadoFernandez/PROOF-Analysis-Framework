@@ -41,17 +41,17 @@ class PAFPackage : public TObject
 		/**
 		 * Prepares the package to be compiled.
 		 */
-		void PreparePackage() const;
+		void PreparePackage();
 		
 		/**
 		 * Create the PAR file with all the content of the current folder.
 		 */
-		void CreateParFile() const;
+		void CreateParFile();
 		
 		/**
 		 * Compile the package as a shared object.
 		 */
-		void CompileAsLibrary() const;
+		void CompileAsLibrary();
 
 		/**
 		 * Set the name of the package.
@@ -65,17 +65,17 @@ class PAFPackage : public TObject
 		 * 
 		 * @return Name of the package.
 		 */
-		virtual const char* GetName() const;
+		virtual const char* GetName();
 
 		/**
 		 * Return the full library filename (Contains also the path to the file).
 		 */
-		TString GetLibraryFileName() const;
+		TString GetLibraryFileName();
 		
 		/**
 		 * Return the full PAR filename (Contains also the path to the file).
 		 */
-		TString GetParFileName() const;
+		TString GetParFileName();
 
 		/**
 		 * Set the setting.
@@ -97,21 +97,21 @@ class PAFPackage : public TObject
 		 * 
 		 * @return TString which specify the command used to generate the package.
 		 */
-		virtual TString GetPreparePackageCommand() const;
+		virtual TString GetPreparePackageCommand();
 
 		/**
 		 * Get the directory that contains the package.
 		 * 
 		 * @return TString with the full path to the directory which contains the file.
 		 */
-		TString GetPackageDir() const;
+		TString GetPackageDir();
 		
 		/**
 		 * Get the directory that will be used to store the temporal files.
 		 * 
 		 * @return TString with the full path to the directory used to work with the package.
 		 */
-		TString GetPackagesDir() const;
+		TString GetPackagesDir();
 
 	protected:
 		/**

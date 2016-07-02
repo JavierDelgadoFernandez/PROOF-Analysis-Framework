@@ -8,13 +8,3 @@
  */
 
 #include "PAFIExecutionEnvironment.h"
-
-PAFIExecutionEnvironment::PAFIExecutionEnvironment()
-{
-
-}
-
-PAFIExecutionEnvironment::~PAFIExecutionEnvironment()
-{
-
-}
