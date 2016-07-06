@@ -60,7 +60,7 @@ void PAFStopWatch::TakeTime(const char* key)
 	PrintTime(result);
 }
 
-TParameter<double>* PAFStopWatch::GetTimeAt(int index) const
+TParameter<double>* PAFStopWatch::GetTimeAt(int index)
 {
 	return (TParameter<double>*)fTimes->At(index);
 }
@@ -70,7 +70,7 @@ TList* PAFStopWatch::GetTimes()
 	return fTimes;
 }
 
-void PAFStopWatch::PrintTimes() const
+void PAFStopWatch::PrintTimes()
 {
 	for(int i = 0; i < fTimes->GetEntries(); i++)
 	{
@@ -78,7 +78,7 @@ void PAFStopWatch::PrintTimes() const
 	}
 }
 
-void PAFStopWatch::PrintTime(TParameter<double>* time) const
+void PAFStopWatch::PrintTime(TParameter<double>* time)
 {
 	PAF_INFO("PAFStopWatch", TString::Format("%s: %fs", time->GetName(), time->GetVal()));
 }

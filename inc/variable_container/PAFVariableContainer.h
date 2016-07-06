@@ -8,13 +8,16 @@
 
 #pragma once
 
+#include "PAFGenericItemVariableContainer.h"
+
 #include "TMap.h"
 #include "TList.h"
 #include "TObject.h"
 #include "TObjString.h"
 #include "TString.h"
 
-#include "PAFGenericItemVariableContainer.h"
+#include "PAF.h"
+
 
 /**
  * @class PAFVariableContainer
@@ -90,5 +93,12 @@ inline T PAFVariableContainer::Get(const char* key)
 {
 	TObjString tKey(key);
 	PAFGenericItemVariableContainer<T>* result = (PAFGenericItemVariableContainer<T>*)fPairs.GetValue(&tKey);
-	return result->Get();
+	if (result)
+	{
+		return result->Get();
+	}
+	else
+	{
+		PAF_FATAL("PAFVariableContainer", TString::Format("Variable %s not found.", key).Data());
+	}
 }
