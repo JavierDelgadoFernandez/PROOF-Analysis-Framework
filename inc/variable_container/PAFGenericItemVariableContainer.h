@@ -52,7 +52,6 @@ class PAFGenericItemVariableContainer : public TObject
 		 */
 		T Get() { return fObject; }
 
-		//TODO Maybe an "IsType" function could facilitate the evolution.
 	private:
 		/**
 		 * Value held.

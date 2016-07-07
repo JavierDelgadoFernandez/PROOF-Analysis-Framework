@@ -57,8 +57,6 @@ PAFIType* PAFTypesFactory::GetPAFType(TLeaf* leaf)
 	{
 		TString tType(leaf->GetTypeName());
 
-		//TODO vector is the first conditional and nested should be all of this.
-		//TODO Other types are not controlled yet (char, uchar, short, ushort, uint, ulong).
 		if(tType.EqualTo("vector<double>"))
 		{
 			return new PAFElementVectorType<double>(leaf);

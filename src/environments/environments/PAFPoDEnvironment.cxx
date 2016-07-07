@@ -57,7 +57,6 @@ TProof* PAFPoDEnvironment::doCreateTProof()
 		PAF_DEBUG("PAFPoDEnvironment", response_command);
 
 		Int_t slotsReady = 0;
-		//TODO Implement logger messages.
 		//Int_t srmsize = 1;
 		//Int_t trmsize = (Int_t) TMath::Log10(fTimeOut) + 1;
 		//Int_t rmsize  = srmsize + trmsize + 13;
