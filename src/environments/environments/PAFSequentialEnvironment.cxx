@@ -190,11 +190,14 @@ void PAFSequentialEnvironment::DrawFeedback(TSelector* selector)
 	TList* feedbacks = fFeedbackCanvas->GetKeys();
 	for(Int_t i = 0; i < feedbacks->GetEntries(); i++)
 	{
-		TObjString* item = (TObjString*)feedbacks->At(i);
-		TCanvas* canvas = fFeedbackCanvas->Get<TCanvas*>(item->GetTitle());
+		TString item = ((TObjString*)feedbacks->At(i))->GetString();
+		TCanvas* canvas = fFeedbackCanvas->Get<TCanvas*>(item);
 		canvas->cd();
 		TH1* th1 = dynamic_cast<TH1*>(selector->GetOutputList()->FindObject(item));
-		if(th1) th1->Draw();
+		if(th1)
+		{
+			th1->Draw();
+		}
 		canvas->Update();
 	}
 }
