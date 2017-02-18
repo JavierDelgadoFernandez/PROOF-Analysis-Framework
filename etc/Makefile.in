@@ -22,7 +22,7 @@ LIBS+=-L$(PAFPATH)/lib -lPAF
 
 MYINCLUDES=$(shell INC=""; for i in `ls -d $(PWD)/../*/`; do INC="-I$$i $$INC"; done; echo $$INC)
 MYINCLUDES+=-I$(PAFPATH)/include
-CXXFLAGS+= $(MYINCLUDES) -g
+CXXFLAGS+= $(MYINCLUDES) -O0  -g
 MYLIBS+=-L$(PAFPATH)/lib -lPAF
 
 #------------------------------------------------------------------------------
